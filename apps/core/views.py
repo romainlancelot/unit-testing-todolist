@@ -45,10 +45,7 @@ class TodolistView(BaseView):
                 dict(status="error", message="User does not exist"), status=400
             )
         return JsonResponse(
-            dict(
-                status="success",
-                items=[item.to_dict() for item in user.item_set.all()],  # type: ignore
-            ),
+            dict(status="success", items=[item.to_dict() for item in user.items.all()]),  # type: ignore
             status=200,
         )
 
@@ -101,7 +98,7 @@ class UsersView(BaseView):
                     dict(
                         id=user.id,  # type: ignore
                         username=user.username,
-                        todolist=[item.to_dict() for item in user.item_set.all()],  # type: ignore
+                        todolist=[item.to_dict() for item in user.items.all()],  # type: ignore
                     )
                     for user in users
                 ],
