@@ -15,6 +15,7 @@ dependencies = [
     "django-stubs",
     "pytest",
     "pytest-cov",
+    "pytest-django",
     "pytest-mock",
 ]
 
@@ -25,13 +26,10 @@ dev = [
     "flake8",
 ]
 
+
 [tool.pytest.ini_options]
 addopts = ["-vv", "--tb=short"]
-
-[tool.coverage.run]
-omit = [
-    "**/tests/*"
-]
+DJANGO_SETTINGS_MODULE = "config.settings"
 
 [build-system]
 requires = ["hatchling"]
