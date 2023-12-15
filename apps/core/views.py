@@ -131,5 +131,6 @@ class UsersView(BaseView):
                 dict(status="success", message="User created successfully"), status=201
             )
         return JsonResponse(
-            dict(status="error", message="Form is invalid", errors=form.errors)
+            dict(status="error", message="Form is invalid", errors=form.errors),
+            status=400,
         )
