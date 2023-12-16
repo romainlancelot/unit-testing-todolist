@@ -19,6 +19,10 @@ Pour installer toutes les dépendances nécéssaires au projet, faites les comma
 votre_machine@votre_distribution:~$ python -m venv venv
 votre_machine@votre_distribution:~$ source venv/bin/activate # /venv/Scripts/activate sur Windows
 (venv) votre_machine@votre_distribution:~$ pip install .
+
+# Nécéssaire pour lancer les tests avec postman
+(venv) votre_machine@votre_distribution:~$ python manage.py migrate
+(venv) votre_machine@votre_distribution:~$ python manage.py runserver
 ```
 
 Et c'est tout, vous pouvez donc lancez les tests !
